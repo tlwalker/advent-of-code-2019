@@ -33,7 +33,7 @@ namespace Day1
         static List<IMass> GetModules(string filename)
         {
             var data = File.ReadLines(filename);
-            return data.Select(x => int.TryParse(x, out int mass) && mass >= 9 ? (IMass) new Module(mass) : new FuellessMass())
+            return data.Select(x => int.TryParse(x, out int mass) && mass > 9 ? (IMass) new Module(mass) : new FuellessMass())
                 .ToList();
         }
 
